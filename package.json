@@ -8,10 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "canvas": "^2.6.1",
     "next": "10.0.5",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "recoil": "^0.1.2"
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.22",
