@@ -34,7 +34,7 @@ export default function Layout({ children }) {
               <Link href="/">
                 <a className="navbar-brand">
                   <Image
-                    src="/sousho-de-sho_logo.png"
+                    src="/images/sousho-de-sho_logo.png"
                     alt="草書で書かれた「草書で書」のロゴ画像"
                     width={600 / 4}
                     height={315 / 4}
