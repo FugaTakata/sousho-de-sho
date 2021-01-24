@@ -36,7 +36,6 @@ export default function Create() {
 
     router.push(`/preview/${color}/${encodeURIComponent(encodedText)}`);
   }
-  console.log(color);
 
   return (
     <Layout>
@@ -59,7 +58,7 @@ export default function Create() {
                   value={color}
                   onClick={(
                     e: MouseEvent<HTMLInputElement, globalThis.MouseEvent>
-                  ) => setColor(e.target.value)}
+                  ) => setColor(e.currentTarget.value)}
                   style={{ backgroundColor: colorCodes[color] }}
                 />
               </div>
