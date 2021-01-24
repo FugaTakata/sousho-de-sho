@@ -1,4 +1,3 @@
-import { route } from "next/dist/next-server/server/router";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -12,7 +11,6 @@ export default function Preview() {
   const [encodedText, setEncodedText] = useState<string>("");
 
   useEffect(() => {
-    // idがqueryで利用可能になったら処理される
     if (router.asPath !== router.route) {
       setEncodedText(router.query.encodedText as string);
       if (!colors.includes(router.query.encodedText as string)) {
