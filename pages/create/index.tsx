@@ -5,7 +5,7 @@ import { FormEvent, useState } from "react";
 export default function Create() {
   const router = useRouter();
   const [text, setText] = useState("");
-  const [color, setColor] = useState("pink");
+  const [color, setColor] = useState("green");
   const [isSending, setIsSending] = useState(false);
 
   function onFormSubmit(e: FormEvent<HTMLFormElement>) {
@@ -13,7 +13,10 @@ export default function Create() {
     setIsSending(true);
 
     const encodedText = encodeURIComponent(text);
-    router.push(`/preview/${color}/${encodedText}`);
+    router.push({
+      pathname: "/preview/[color]/[encodedText]",
+      query: { color, encodedText },
+    });
   }
 
   return (
