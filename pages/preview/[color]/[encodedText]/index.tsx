@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Layout from "../../../../components/Layout";
 
 const colors = ["black", "blue", "green", "indigo", "orange", "pink", "red"];
 
@@ -16,7 +17,7 @@ export default function Preview() {
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
 
   return (
-    <div>
+    <Layout>
       <Head>
         <meta property="og:image" key="ogImage" content={ogpImageUrl} />
         <meta
@@ -27,6 +28,6 @@ export default function Preview() {
         <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
       </Head>
       <main>preview page</main>
-    </div>
+    </Layout>
   );
 }

@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-export default function Layout() {
+export default function Layout({ children }) {
   // const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/images/card.png`
   const title = "草書で書";
   const description =
@@ -22,6 +22,7 @@ export default function Layout() {
           content={description}
         />
       </Head>
+      <div>{children}</div>
     </div>
   );
 }
