@@ -12,6 +12,7 @@ export default function Layout({ children }) {
     <div>
       <Head>
         <title>{title}</title>
+        <link rel="icon" href="/favicon.ico" />
         <meta name="description" key="description" content={description} />
         <meta property="og:title" key="ogTItle" content={title} />
         <meta property="og:site_name" key="ogSiteName" content={title} />

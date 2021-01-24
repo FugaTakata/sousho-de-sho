@@ -51,7 +51,9 @@ export default function Preview(props: Props) {
 
 export async function getServerSideProps({ query }) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_WEB_URL}/api/${query.color}/${query.encodedText}`
+    `${process.env.NEXT_PUBLIC_WEB_URL}/api/${encodeURIComponent(
+      query.color
+    )}/${encodeURIComponent(query.encodedText)}`
   );
   const json = await res.json();
   return { props: json };

@@ -6,12 +6,13 @@ export default function Create() {
   const router = useRouter();
   const [text, setText] = useState("");
   const [color, setColor] = useState("pink");
+  const [isSending, setIsSending] = useState(false);
 
   function onFormSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setIsSending(true);
 
     const encodedText = encodeURIComponent(text);
-
     router.push(`/preview/${color}/${encodedText}`);
   }
 
@@ -31,13 +32,19 @@ export default function Create() {
             onChange={(e) => setText(e.target.value)}
           />
           <div className="m-3">
-            <button
-              type="submit"
-              className="btn btn-primary"
-              disabled={text.length === 0}
-            >
-              草書にする
-            </button>
+            {isSending ? (
+              <div className="spinner-border text-secondary" role="status">
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            ) : (
+              <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={text.length === 0}
+              >
+                草書にする
+              </button>
+            )}
           </div>
         </form>
       </div>
