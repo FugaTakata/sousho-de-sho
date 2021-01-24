@@ -6,19 +6,8 @@ import Layout from "../../../../components/Layout";
 const colors = ["black", "blue", "green", "indigo", "orange", "pink", "red"];
 
 export default function Preview() {
-  const router = useRouter();
-  const [color, setColor] = useState<string>("");
-  const [encodedText, setEncodedText] = useState<string>("");
-
-  useEffect(() => {
-    if (router.asPath !== router.route) {
-      setEncodedText(router.query.encodedText as string);
-      if (!colors.includes(router.query.encodedText as string)) {
-        const i = Math.floor(Math.random() * colors.length);
-        setColor(colors[i]);
-      }
-    }
-  }, [router]);
+  const color = "pink";
+  const encodedText = encodeURIComponent("私の名前は高田楓我です。");
 
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
 
