@@ -2,7 +2,15 @@ import { NextApiRequest, NextApiResponse } from "next";
 import * as path from "path";
 import { createCanvas, registerFont, loadImage } from "canvas";
 
-const colors = ["black", "blue", "green", "indigo", "orange", "pink", "red"];
+const colors: Array<string> = [
+  "black",
+  "blue",
+  "green",
+  "indigo",
+  "orange",
+  "pink",
+  "red",
+];
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const width = 600;
@@ -32,7 +40,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   context.fillStyle = "#424242";
   context.textAlign = "start";
   context.textBaseline = "middle";
-  context.fillText(`${decodeURIComponent(encodedText)}`, 30, 31.5);
+  context.fillText(
+    `${decodeURIComponent(encodedText)}`,
+    width / 20,
+    height / 20
+  );
 
   const buffer = canvas.toBuffer();
 
