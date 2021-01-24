@@ -14,6 +14,8 @@ export default function Preview(props: Props) {
 
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
   const twitterHeaderImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/twitter_header`;
+  // const facebookCoverImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/facebook_cover`;
+  // const instagramPostImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/instagram_post`;
 
   return (
     <Layout>
@@ -36,14 +38,31 @@ export default function Preview(props: Props) {
           </Link>
           を参照してください。
         </p>
+
         <h4>横長（600 &#215; 315）</h4>
         <img src={ogpImageUrl} alt="生成した横長画像" width="100%" />
+
         <h4 className="mt-5">Twitterヘッダー（1500 &#215; 500）</h4>
         <img
           src={twitterHeaderImageUrl}
           alt="生成したtwitterのヘッダー画像"
           width="100%"
         />
+
+        {/* <h4 className="mt-5">Facebookカバー（820 &#215; 312）</h4>
+        <img
+          src={facebookCoverImageUrl}
+          alt="生成したfacebookのカバー画像"
+          width="100%"
+        />
+
+        <h4 className="mt-5">Instagram post（1080 &#215; 1080）</h4>
+        <img
+          src={instagramPostImageUrl}
+          alt="生成したinstagram post画像"
+          width="100%"
+        /> */}
+
         <div className="my-5 d-flex justify-content-center">
           <TwitterShareButton
             url={`${process.env.NEXT_PUBLIC_WEB_URL}/preview/${color}/${encodedText}`}

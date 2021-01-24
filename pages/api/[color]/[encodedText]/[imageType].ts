@@ -20,11 +20,14 @@ const colors: Array<string> = [
 const sizes = {
   ogp: { width: 600, height: 315 },
   twitter_header: { width: 1500, height: 500 },
+  facebook_cover: { width: 820, height: 312 },
+  instagram_post: { width: 1080, height: 1080 },
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const width = sizes[req.query.imageType as string]?.width || 600;
-  const height = sizes[req.query.imageType as string]?.height || 315;
+  const imageType = req.query.imageType as string;
+  const width = sizes[imageType]?.width || 600;
+  const height = sizes[imageType]?.height || 315;
 
   const drawArea: DrawArea = {
     width: (width / 5) * 4,
@@ -61,7 +64,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const context = canvas.getContext("2d");
 
   const backgroundImage = await loadImage(
-    path.resolve(`./images/${color}/Twitter_ogp.png`)
+    path.resolve(`./images/${color}/${imageType}.png`)
   );
   context.drawImage(backgroundImage, 0, 0, width, height);
 
