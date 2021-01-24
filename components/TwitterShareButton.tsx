@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { encode } from "punycode";
 
 type Props = {
   url: string;
@@ -9,7 +8,7 @@ type Props = {
 export default function TwitterShareButton(props: Props) {
   console.log(props);
   const url = `https://twitter.com/intent/tweet?url=${encodeURI(
-    props.url
+    encodeURI(props.url)
   )}&text=${props.text}&hashtags=${encodeURIComponent("草書で書")}`;
 
   return (
