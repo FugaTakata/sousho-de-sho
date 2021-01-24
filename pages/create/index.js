@@ -1,3 +1,9 @@
+import Layout from "../../components/Layout";
+
 export default function Create() {
-  return <div>create page</div>;
+  return (
+    <Layout>
+      <div>create page</div>
+    </Layout>
+  );
 }
