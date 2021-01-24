@@ -25,10 +25,13 @@ export default function Layout({ children }) {
           content={description}
         />
       </Head>
-      <main>
+      <main style={{ backgroundColor: "#fafafa" }}>
         <nav
           className="navbar navbar-expand-lg navbar-light mb-3"
-          style={{ borderBottom: "1px solid #f0f0f0" }}
+          style={{
+            backgroundColor: "#ffffff",
+            borderBottom: "1px solid #f0f0f0",
+          }}
         >
           <div className="container">
             <div className="mr-auto">
@@ -52,7 +55,10 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        <footer className="text-center mt-5 py-5 bg-light">
+        <footer
+          className="text-center mt-5 py-5 bg-light"
+          style={{ borderTop: "1px solid #f0f0f0" }}
+        >
           <div className="pb-1 text-muted">
             Created by f-maple{" "}
             <a href="https://twitter.com/maple__f" className="link-primary">
