@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { useState } from "react";
 import Layout from "../components/Layout";
 
 export default function Home() {
+  const [isChecked, setIsChecked] = useState(false);
   return (
     <Layout>
       <div className="text-center">
@@ -10,10 +12,26 @@ export default function Home() {
           書で書
         </h1>
         <p className="m-5">
-          このサービスはユーザの方々の入力を草書の画像に変換します。
+          このサービスはユーザの方々の入力をエレガントな草書の画像に変換することができます。
         </p>
+
         <p className="m-5">
-          利用前に必ず
+          このサービスで利用しているフォント、和紙の画像（少し加工済み）は
+          <a className="link-primary" href="https://booth.pm/ja/items/318557">
+            フォントのリンク
+          </a>
+          と
+          <a
+            className="link-primary"
+            href="https://publicdomainq.net/japanese-paper-0032397/"
+          >
+            和紙の画像のリンク
+          </a>
+          です。大変助かりました。ありがとうございます。
+        </p>
+
+        <p className="m-5">
+          <span className="text-danger">利用前に必ず</span>
           <Link href="/terms-of-service">
             <a className="link-primary">利用規約</a>
           </Link>
@@ -24,9 +42,10 @@ export default function Home() {
           を確認し、同意の上サービスを利用してください。
         </p>
 
-        <h2>このサービスの使い方</h2>
         <Link href="/create">
-          <a>to create</a>
+          <a>
+            <button className="btn btn-primary">作ってみる</button>
+          </a>
         </Link>
       </div>
     </Layout>
