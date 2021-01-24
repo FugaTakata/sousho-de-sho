@@ -22,7 +22,7 @@ export default function Preview() {
         <meta
           name="twitter:card"
           key="twitterCard"
-          content="wummary_large_image"
+          content="summary_large_image"
         />
         <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
       </Head>
