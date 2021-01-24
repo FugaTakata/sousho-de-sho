@@ -1,13 +1,16 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 import Layout from "../../../../components/Layout";
 
 const colors = ["black", "blue", "green", "indigo", "orange", "pink", "red"];
 
-export default function Preview() {
-  const color = "pink";
-  const encodedText = encodeURIComponent("私の名前は高田楓我です。");
+type Props = {
+  color: string;
+  encodedText: string;
+};
+
+export default function Preview(props: Props) {
+  const color = props.color;
+  const encodedText = props.encodedText;
 
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
 
@@ -25,4 +28,12 @@ export default function Preview() {
       <main>preview page</main>
     </Layout>
   );
+}
+
+export async function getServerSideProps({ query }) {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_WEB_URL}/api/${query.color}/${query.encodedText}`
+  );
+  const json = await res.json();
+  return { props: json };
 }
