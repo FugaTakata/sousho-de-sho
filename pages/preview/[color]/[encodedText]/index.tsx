@@ -28,7 +28,14 @@ export default function Preview(props: Props) {
       </Head>
       <main className="text-center">
         <h2>草書画像を作成しました</h2>
-        <p className="m-5">画像の利用については利用規約を参照してください。</p>
+
+        <p className="m-5">
+          画像の利用については
+          <Link href="/terms-of-service">
+            <a className="link-primary">利用規約</a>
+          </Link>
+          を参照してください。
+        </p>
         <h4>横長（600 &#215; 315）</h4>
         <img src={ogpImageUrl} alt="生成した横長画像" width="100%" />
         <h4 className="mt-5">Twitterヘッダー（1500 &#215; 500）</h4>
@@ -45,10 +52,11 @@ export default function Preview(props: Props) {
             text={encodedText}
           />
         </div>
-        <div className="my-5 d-flex justify-content-center">
+        <p>このページを離れると作成した画像は破棄されます。</p>
+        <div className="my-3 d-flex justify-content-center">
           <Link href="/create">
             <a>
-              <button className="btn btn-warning">作り直す</button>
+              <button className="btn btn-warning">新しく作る</button>
             </a>
           </Link>
         </div>

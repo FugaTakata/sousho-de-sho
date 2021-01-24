@@ -23,9 +23,14 @@ export default function Create() {
     <Layout>
       <div className="text-center">
         <h2>草書の画像を作成する</h2>
-        <p className="m-5">入力した言葉を草書にしましょう！</p>
+        <p className="m-5">草書にしたい言葉を入力しましょう</p>
+        <p className="m-5 text-danger">
+          一部表示ができない漢字や記号があります
+        </p>
         <form onSubmit={onFormSubmit}>
-          <h3>言葉の入力</h3>
+          <h3 className="m-5">まずは枠の色を選びましょう</h3>
+
+          <h3 className="m-5">言葉の入力</h3>
           <textarea
             className="form-control"
             placeholder={`やってみせ、言って聞かせて、

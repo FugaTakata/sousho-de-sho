@@ -54,10 +54,20 @@ export default function Layout({ children }) {
 
         <footer className="text-center mt-5 py-5 bg-light">
           <div className="pb-1 text-muted">
-            Created by{" "}
-            <a href="https://twitter.com/maple__f" className="link-info">
-              @maple__f
+            Created by f-maple{" "}
+            <a href="https://twitter.com/maple__f" className="link-primary">
+              Twitterアカウント
             </a>
+          </div>
+          <div className="pb-1 text-muted">
+            <Link href="/terms-of-service">
+              <a>利用規約</a>
+            </Link>
+          </div>
+          <div className="pb-1 text-muted">
+            <Link href="/privacy-policy">
+              <a>プライバシーポリシー</a>
+            </Link>
           </div>
         </footer>
       </main>
