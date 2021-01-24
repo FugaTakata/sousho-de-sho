@@ -88,7 +88,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       } else {
         context.fillText(
           char,
-          width / 10 + charSize / 2 + charSize * charIndex,
+          // width / 10 + charSize / 2 + charSize * charIndex,
+          width / 10 +
+            (space.width / 2) * (maxLength - line.length + 1) +
+            space.width * charIndex,
           height / 10 + space.height / 2 + space.height * lineIndex
         );
       }
