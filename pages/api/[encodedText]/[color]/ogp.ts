@@ -23,13 +23,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   const canvas = createCanvas(width, height);
   const context = canvas.getContext("2d");
 
-  // draw rect
   const backgroundImage = await loadImage(
     path.resolve(`./images/${color}/Twitter_ogp.png`)
   );
   context.drawImage(backgroundImage, 0, 0, width, height);
 
-  // draw text
   context.font = "40px gatasosyo";
   context.fillStyle = "#424242";
   context.textAlign = "start";
