@@ -13,10 +13,12 @@ export default function Create() {
     setIsSending(true);
 
     const encodedText = encodeURIComponent(text);
-    router.push({
-      pathname: "/preview/[color]/[encodedText]",
-      query: { color, encodedText },
-    });
+
+    // router.push({
+    //   pathname: "/preview/[color]/[encodedText]",
+    //   query: { color, encodedText },
+    // });
+    router.push(`/preview/${color}/${encodeURIComponent(encodedText)}`);
   }
 
   return (
