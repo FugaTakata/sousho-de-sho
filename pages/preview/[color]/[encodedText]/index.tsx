@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import Layout from "../../../../components/Layout";
 import TwitterShareButton from "../../../../components/TwitterShareButton";
 
@@ -26,10 +27,8 @@ export default function Preview(props: Props) {
         <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
       </Head>
       <main className="text-center">
-        <h2>草書画像を作りました</h2>
-        <p className="m-5">
-          あなたの名言を保存してTwitterのヘッダー画像にしよう！
-        </p>
+        <h2>草書画像を作成しました</h2>
+        <p className="m-5">画像の利用については利用規約を参照してください。</p>
         <h2>横長（600x315）</h2>
         <img src={ogpImageUrl} alt="生成した横長画像" width="100%" />
         <h2 className="mt-5">Twitterヘッダー（1500x500）</h2>
@@ -38,11 +37,18 @@ export default function Preview(props: Props) {
           alt="生成したtwitterのヘッダー画像"
           width="100%"
         />
-        <div className="my-3 d-flex justify-content-center">
+        <div className="my-5 d-flex justify-content-center">
           <TwitterShareButton
             url={`${process.env.NEXT_PUBLIC_WEB_URL}/preview/${color}/${encodedText}`}
             text={encodedText}
           />
+        </div>
+        <div className="my-5 d-flex justify-content-center">
+          <Link href="/create">
+            <a>
+              <button className="btn btn-warning">作り直す</button>
+            </a>
+          </Link>
         </div>
       </main>
     </Layout>
