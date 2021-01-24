@@ -69,13 +69,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   context.fillStyle = "#424242";
   context.textAlign = "center";
   context.textBaseline = "middle";
-  // const lines = createTextLines(context, text);
-  // lines.forEach((line, index) => {
-  //   const y = 157 + (40 * (lines.length - 1)) / 2;
-  //   context.fillText(line, 300, y);
-  // });
+
   lines.forEach((line, lineIndex) => {
     const charArray: string[] = line.split("");
+
     charArray.forEach((char, charIndex) => {
       if (space.height < space.width) {
         context.fillText(
@@ -88,7 +85,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       } else {
         context.fillText(
           char,
-          // width / 10 + charSize / 2 + charSize * charIndex,
           width / 10 +
             (space.width / 2) * (maxLength - line.length + 1) +
             space.width * charIndex,
@@ -96,13 +92,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         );
       }
     });
-    // context.fillText(
-    //   line,
-    //   width / 2,
-    //   height / 10 + charSize / 2 + charSize * index
-    // );
   });
-  // context.fillText(text, width / 20, height / 20);
 
   const buffer = canvas.toBuffer();
 
