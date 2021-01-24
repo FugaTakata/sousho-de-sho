@@ -46,9 +46,7 @@ export default function Preview(props: Props) {
         />
         <div className="my-5 d-flex justify-content-center">
           <TwitterShareButton
-            url={`${
-              process.env.NEXT_PUBLIC_WEB_URL
-            }/preview/${color}/${encodeURIComponent(encodedText)}`}
+            url={`${process.env.NEXT_PUBLIC_WEB_URL}/preview/${color}/${encodedText}`}
             text={encodedText}
           />
         </div>
