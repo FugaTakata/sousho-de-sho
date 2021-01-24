@@ -7,6 +7,7 @@ type Props = {
 };
 
 export default function TwitterShareButton(props: Props) {
+  console.log(props);
   const url = `https://twitter.com/intent/tweet?url=${encodeURI(
     props.url
   )}&text=${props.text}&hashtags=${encodeURIComponent("草書で書")}`;

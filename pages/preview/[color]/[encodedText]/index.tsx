@@ -5,12 +5,12 @@ import TwitterShareButton from "../../../../components/TwitterShareButton";
 
 type Props = {
   color: string;
-  encodedText: string;
+  text: string;
 };
 
 export default function Preview(props: Props) {
   const color = props.color;
-  const encodedText = props.encodedText;
+  const encodedText = encodeURIComponent(props.text);
 
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
   const twitterHeaderImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/twitter_header`;
@@ -69,8 +69,6 @@ export async function getServerSideProps({ query }) {
   );
 
   const json = await res.json();
-
-  json.encodedText = encodeURIComponent(json.encodedText);
 
   return { props: json };
 }

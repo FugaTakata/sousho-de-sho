@@ -3,7 +3,6 @@ import { useState } from "react";
 import Layout from "../components/Layout";
 
 export default function Home() {
-  const [isChecked, setIsChecked] = useState(false);
   return (
     <Layout>
       <div className="text-center">
