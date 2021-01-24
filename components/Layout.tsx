@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import { Html } from "next/document";
 
 export default function Layout({ children }) {
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/images/sousho-de-sho_twitter_card.png`;
@@ -10,7 +9,7 @@ export default function Layout({ children }) {
     "あなたの言葉を草書の画像にできるサービスです。Twitterのヘッダー画像を作ることができます。";
 
   return (
-    <Html lang="ja">
+    <div>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -78,6 +77,6 @@ export default function Layout({ children }) {
           </div>
         </footer>
       </main>
-    </Html>
+    </div>
   );
 }
