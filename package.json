@@ -9,6 +9,7 @@
     "now-build": "cp canvas_lib64/*so.1 node_modules/canvas/build/Release/ && npm run build"
   },
   "dependencies": {
+    "bootstrap": "^5.0.0-beta1",
     "canvas": "^2.6.1",
     "next": "10.0.5",
     "react": "17.0.1",
