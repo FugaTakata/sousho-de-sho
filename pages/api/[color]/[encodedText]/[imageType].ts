@@ -23,8 +23,10 @@ const sizes = {
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const width = sizes[req.query.imageType as string]?.width | 600;
-  const height = sizes[req.query.imageType as string]?.height | 315;
+  console.log(sizes[req.query.imageType as string]?.width);
+  const width = sizes[req.query.imageType as string]?.width || 600;
+  const height = sizes[req.query.imageType as string]?.height || 315;
+  console.log(width);
 
   const drawArea: DrawArea = {
     width: (width / 5) * 4,
