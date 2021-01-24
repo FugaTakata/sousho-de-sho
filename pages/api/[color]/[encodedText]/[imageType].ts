@@ -12,9 +12,14 @@ const colors: Array<string> = [
   "red",
 ];
 
+const sizes = {
+  ogp: { width: 600, height: 315 },
+  twitter_header: { width: 1500, height: 500 },
+};
+
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const width = 600;
-  const height = 315;
+  const width = sizes[req.query.imageType as string]?.width | 600;
+  const height = sizes[req.query.imageType as string]?.height | 315;
 
   const encodedText = req.query.encodedText as string;
   let color = req.query.color as string;
