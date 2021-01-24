@@ -28,7 +28,7 @@ export default function Create() {
           一部表示ができない漢字や記号があります
         </p>
         <form onSubmit={onFormSubmit}>
-          <h3 className="m-5">まずは枠の色を選びましょう</h3>
+          {/* <h3 className="m-5">まずは枠の色を選びましょう</h3> */}
 
           <h3 className="m-5">言葉の入力</h3>
           <textarea
