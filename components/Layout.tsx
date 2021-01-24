@@ -26,11 +26,11 @@ export default function Layout({ children }) {
         />
       </Head>
       <main>
-        <nav className="navbar navbar-expand-lg navbar-light mb-3">
-          <div
-            className="container"
-            style={{ borderBottom: "1px solid #fafafa" }}
-          >
+        <nav
+          className="navbar navbar-expand-lg navbar-light mb-3"
+          style={{ borderBottom: "1px solid #f0f0f0" }}
+        >
+          <div className="container">
             <div className="mr-auto">
               <Link href="/">
                 <a className="navbar-brand">
