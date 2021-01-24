@@ -29,9 +29,9 @@ export default function Preview(props: Props) {
       <main className="text-center">
         <h2>草書画像を作成しました</h2>
         <p className="m-5">画像の利用については利用規約を参照してください。</p>
-        <h2>横長（600x315）</h2>
+        <h4>横長（600 &#215; 315）</h4>
         <img src={ogpImageUrl} alt="生成した横長画像" width="100%" />
-        <h2 className="mt-5">Twitterヘッダー（1500x500）</h2>
+        <h4 className="mt-5">Twitterヘッダー（1500 &#215; 500）</h4>
         <img
           src={twitterHeaderImageUrl}
           alt="生成したtwitterのヘッダー画像"
@@ -59,10 +59,12 @@ export default function Preview(props: Props) {
 
 export async function getServerSideProps({ query }) {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_WEB_URL}/api/${encodeURIComponent(
-      query.color
-    )}/${encodeURIComponent(query.encodedText)}`
+    `${process.env.NEXT_PUBLIC_WEB_URL}/api/${query.color}/${query.encodedText}`
   );
+
   const json = await res.json();
+
+  json.encodedText = encodeURIComponent(json.encodedText);
+
   return { props: json };
 }
