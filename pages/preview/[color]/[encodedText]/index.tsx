@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Layout from "../../../../components/Layout";
-
-const colors = ["black", "blue", "green", "indigo", "orange", "pink", "red"];
+import TwitterShareButton from "../../../../components/TwitterShareButton";
 
 type Props = {
   color: string;
@@ -13,6 +12,7 @@ export default function Preview(props: Props) {
   const encodedText = props.encodedText;
 
   const ogpImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/ogp`;
+  const twitterHeaderImageUrl = `${process.env.NEXT_PUBLIC_WEB_URL}/api/${color}/${encodedText}/twitter_header`;
 
   return (
     <Layout>
@@ -25,7 +25,26 @@ export default function Preview(props: Props) {
         />
         <meta name="twitter:image" key="twitterImage" content={ogpImageUrl} />
       </Head>
-      <main>preview page</main>
+      <main className="text-center">
+        <h2>草書画像を作りました</h2>
+        <p className="m-5">
+          あなたの名言を保存してTwitterのヘッダー画像にしよう！
+        </p>
+        <h2>横長（600x315）</h2>
+        <img src={ogpImageUrl} alt="生成した横長画像" width="100%" />
+        <h2 className="mt-5">Twitterヘッダー（1500x500）</h2>
+        <img
+          src={twitterHeaderImageUrl}
+          alt="生成したtwitterのヘッダー画像"
+          width="100%"
+        />
+        <div className="my-3 d-flex justify-content-center">
+          <TwitterShareButton
+            url={`${process.env.NEXT_PUBLIC_WEB_URL}/preview/${color}/${encodedText}`}
+            text={encodedText}
+          />
+        </div>
+      </main>
     </Layout>
   );
 }
