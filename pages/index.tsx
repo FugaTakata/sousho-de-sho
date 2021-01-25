@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useState } from "react";
 import Layout from "../components/Layout";
 
 export default function Home() {
@@ -10,11 +9,11 @@ export default function Home() {
           <span className="text-success">草</span>
           書で書
         </h1>
-        <p className="m-5">
+        <p className="m-4">
           このサービスはユーザの方々の入力をエレガントな草書の画像に変換することができます。
         </p>
 
-        <p className="m-5">
+        <p className="m-4">
           このサービスで利用しているフォント、和紙の画像（少し加工済み）は
           <a className="link-primary" href="https://booth.pm/ja/items/318557">
             フォントのリンク
@@ -26,10 +25,15 @@ export default function Home() {
           >
             和紙の画像のリンク
           </a>
-          です。大変助かりました。ありがとうございます。
+          です。
+        </p>
+        <p className="m-4">
+          大変助かりました。
+          <br />
+          ありがとうございます。
         </p>
 
-        <p className="m-5">
+        <p className="m-4">
           <span className="text-danger">利用前に必ず</span>
           <Link href="/terms-of-service">
             <a className="link-primary">利用規約</a>
@@ -41,11 +45,13 @@ export default function Home() {
           を確認し、同意の上サービスを利用してください。
         </p>
 
-        <Link href="/create">
-          <a>
-            <button className="btn btn-primary">作ってみる</button>
-          </a>
-        </Link>
+        <div className="m-5">
+          <Link href="/create">
+            <a>
+              <button className="btn btn-primary">作ってみる</button>
+            </a>
+          </Link>
+        </div>
       </div>
     </Layout>
   );

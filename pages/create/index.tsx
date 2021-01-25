@@ -40,13 +40,12 @@ export default function Create() {
   return (
     <Layout>
       <div className="text-center">
-        <h2>草書の画像を作成する</h2>
-        <p className="m-5">草書にしたい言葉を入力しましょう</p>
-        <p className="m-5 text-danger">
+        <h2>草書の画像を作成しよう</h2>
+        <p className="m-4 text-danger">
           一部表示ができない漢字や記号があります
         </p>
         <form onSubmit={onFormSubmit}>
-          <h3 className="m-5">まずは枠の色を選びましょう</h3>
+          <h3 className="mt-5">まずは枠の色を選択</h3>
           {colors.map((color) => {
             return (
               <div className="form-check form-check-inline" key={color}>
@@ -65,7 +64,7 @@ export default function Create() {
             );
           })}
 
-          <h3 className="m-5">言葉の入力</h3>
+          <h3 className="mt-5">次に言葉を入力</h3>
           <textarea
             className="form-control"
             placeholder={`やってみせ、言って聞かせて、
@@ -74,7 +73,7 @@ export default function Create() {
             required
             onChange={(e) => setText(e.target.value)}
           />
-          <div className="m-3">
+          <div className="m-5">
             {isSending ? (
               <div className="spinner-border text-secondary" role="status">
                 <span className="visually-hidden">Loading...</span>
