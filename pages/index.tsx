@@ -25,12 +25,7 @@ export default function Home() {
           >
             和紙の画像のリンク
           </a>
-          です。
-        </p>
-        <p className="m-4">
-          大変助かりました。
-          <br />
-          ありがとうございます。
+          です。 フリーで使わせていただけて助かりました。 ありがとうございます。
         </p>
 
         <p className="m-4">
