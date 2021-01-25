@@ -14,6 +14,7 @@ export default function Layout({ children }) {
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" key="description" content={description} />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" key="ogTItle" content={title} />
         <meta property="og:site_name" key="ogSiteName" content={title} />
         <meta property="og:image" key="ogImage" content={ogpImageUrl} />
