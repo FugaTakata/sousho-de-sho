@@ -60,11 +60,19 @@ export default function Layout({ children }) {
           className="text-center mt-5 py-5 bg-light"
           style={{ borderTop: "1px solid #f0f0f0" }}
         >
+          <div className="pb-1 text-muted">&copy; f-maple</div>
           <div className="pb-1 text-muted">
-            Created by f-maple{" "}
             <a href="https://twitter.com/maple__f" className="link-primary">
-              Twitterアカウント
+              Twitter
             </a>
+            と
+            <a
+              href="https://github.com/FugaTakata/sousho-de-sho"
+              className="link-primary"
+            >
+              GitHub
+            </a>
+            のリンク
           </div>
           <div className="pb-1 text-muted">
             <Link href="/terms-of-service">
