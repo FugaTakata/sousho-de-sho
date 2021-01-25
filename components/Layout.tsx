@@ -27,7 +27,7 @@ export default function Layout({ children }) {
       </Head>
       <main style={{ backgroundColor: "#fafafa" }}>
         <nav
-          className="navbar navbar-expand-lg navbar-light mb-3"
+          className="navbar navbar-expand-lg navbar-light mb-3 sticky-top"
           style={{
             backgroundColor: "#ffffff",
             borderBottom: "1px solid #f0f0f0",
@@ -73,6 +73,11 @@ export default function Layout({ children }) {
           <div className="pb-1 text-muted">
             <Link href="/privacy-policy">
               <a>プライバシーポリシー</a>
+            </Link>
+          </div>
+          <div className="pb-1 text-muted">
+            <Link href="/license">
+              <a>ライセンス</a>
             </Link>
           </div>
         </footer>
